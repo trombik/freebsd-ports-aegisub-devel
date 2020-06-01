@@ -1,0 +1,13 @@
+--- automation/Makefile.orig	2019-10-06 19:46:06 UTC
++++ automation/Makefile
+@@ -13,8 +13,8 @@ $(DESTDIR)$(P_DATA)/automation/%: $(d)%
+ 	$(MKDIR_INSTALL)
+ 
+ aegisub-lua_OBJ := $(d)tests/aegisub.o $(TOP)lib/libaegisub.a $(TOP)lib/libluabins.a $(LIBS_LUA)
+-aegisub-lua_CPPFLAGS := $(CPPFLAGS_BOOST) $(CFLAGS_LUA) -I$(TOP)libaegisub/include -I$(TOP)src $(CXXFLAGS_WX)
+-aegisub-lua_LIBS := $(LIBS_WX) $(LIBS_BOOST) $(LIBS_ICU) $(LIBS_PTHREAD)
++aegisub-lua_CPPFLAGS := $(CPPFLAGS_BOOST) $(CFLAGS_LUA) -I$(TOP)libaegisub/include -I$(TOP)src $(CXXFLAGS_WX) $(CFLAGS_ICONV) $(CFLAGS_PTHREAD)
++aegisub-lua_LIBS := $(LIBS_WX) $(LIBS_BOOST) $(LIBS_ICU) $(LIBS_ICONV) $(LIBS_PTHREAD)
+ 
+ PROGRAM += $(d)aegisub-lua
+ 
